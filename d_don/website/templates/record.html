@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{% block content%}
+
+<div class="col-md-6 offset-md-3"></div>
+<div class="card text-bg-light mb-3" style="max-width: 50rem;"; >
+    <div class="card-header"  style="color: rgb(230, 2, 2); font-size: larger; font-weight: bold;">
+        {{ donation_record.donation_name }}
+    </div>
+    <div class="card-body" >
+      <h5 class="card-title"><strong style="color:rgba(230, 2, 2, 0.781);" >Created at :</strong> {{ donation_record.created_at }}</h5>
+      <h5 class="card-title"> <strong style="color:rgba(230, 2, 2, 0.781);">Donation Reference : </strong> {{ donation_record.donation_reference }}</h5>
+      <h5 class="card-title"><strong style="color:rgba(230, 2, 2, 0.781);">Donation Type : </strong> {{ donation_record.donation_type }}</h5>
+      <h5 class="card-title"> <strong style="color:rgba(230, 2, 2, 0.781);"> City : </strong> {{ donation_record.city }}</h5>
+
+      
+      
+    </div>
+  </div>
+  <br /> <br />
+
+<a href="{%  url 'home' %}" class="btn btn-warning" >Back to donation list</a>
+
+<a href="{% url 'delete_donation' donation_record.pk %}" class="btn btn-danger">Delete</a>
+
+<a href="{% url 'update_donation' donation_record.pk %}" class="btn btn-success">Update donation </a>
+
+
+
+
+</div>
+
+
+
+
+{% endblock %}
